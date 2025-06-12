@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para o Amor da Minha Vida</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffb6c1, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 80%;
+    }
+    .btn {
+      margin-top: 30px;
+      background: #ff69b4;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff1493;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes fall {
+      0% {
+        top: -10%;
+        left: calc(100% * var(--x));
+        opacity: 1;
+      }
+      100% {
+        top: 100%;
+        left: calc(100% * var(--x) + 30px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="sua-musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="hearts">
+    <!-- Corações animados -->
+    <div class="heart" style="--x: 0.1;"></div>
+    <div class="heart" style="--x: 0.3;"></div>
+    <div class="heart" style="--x: 0.5;"></div>
+    <div class="heart" style="--x: 0.7;"></div>
+    <div class="heart" style="--x: 0.9;"></div>
+  </div>
+
+  <h1>Para o Amor da Minha Vida 💖</h1>
+  <p>Hoje é o Dia dos Namorados, mas amar você é todo dia. Obrigado por ser minha parceira, minha paz e meu tudo.</p>
+  
+  <button class="btn" onclick="mostrarMensagem()">Clique aqui</button>
+
+  <div id="mensagem" style="display:none;">
+    <p>Você é o melhor presente que a vida me deu. Que nosso amor continue crescendo e nos levando cada vez mais longe! 💕</p>
+  </div>
+
+  <script>
+    function mostrarMensagem() {
+      document.getElementById('mensagem').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
